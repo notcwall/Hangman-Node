@@ -18,10 +18,9 @@ for(var i = 0; i < currentAnswer.word.length; i++){
 }
 
 function display(){
-	console.log("Hint: " + currentAnswer.hint);
-	console.log(displayedAnswer.toString().replace(/,/g, ' '));
-	console.log("Already Guessed: " + incorrectGuesses.toString());
-	console.log("Remaining Guesses: " + remainingGuesses);
+	console.log(displayedAnswer.toString().replace(/,/g, ' ') + '\r\n');
+	console.log("Already Guessed: " + incorrectGuesses.toString() + '\r\n');
+	console.log("Remaining Guesses: " + remainingGuesses + '\r\n');
 }
 
 function prompt(){
@@ -65,4 +64,7 @@ function prompt(){
 	});
 }
 
+console.log("United States Presidents Hangman!");
+console.log("---------------------------------");
+console.log("Hint: " + currentAnswer.hint + '\r\n');
 prompt();
