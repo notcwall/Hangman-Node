@@ -19,7 +19,7 @@ for(var i = 0; i < currentAnswer.word.length; i++){
 
 function display(){
 	console.log(displayedAnswer.toString().replace(/,/g, ' ') + '\r\n');
-	console.log("Already Guessed: " + incorrectGuesses.toString() + '\r\n');
+	console.log("Incorrectly Guessed: " + incorrectGuesses.toString() + '\r\n');
 	console.log("Remaining Guesses: " + remainingGuesses + '\r\n');
 }
 
@@ -47,7 +47,7 @@ function prompt(){
 			}
 			if(isCorrectGuess == false){
 				remainingGuesses--;
-				incorrectGuesses = incorrectGuesses + userGuess;
+				incorrectGuesses = incorrectGuesses + userGuess + ' ';
 			}
 			if(remainingGuesses == 0){
 				console.log("You lose!");
@@ -60,6 +60,10 @@ function prompt(){
 			else{
 				prompt();
 			}
+		}
+		else{
+			console.log("Invalid input.");
+			prompt();
 		}
 	});
 }
